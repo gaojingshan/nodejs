@@ -16,3 +16,4 @@ xiaoming.singing();
 
 console.log(sjx.mianji(2, 6));
 console.log(sjx.zhouchang(2, 6, 5));
+
