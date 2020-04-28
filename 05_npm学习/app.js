@@ -3,6 +3,7 @@ var rmb = require('rmb-x');
 
 // 农历对象
 var obj = sl.solar2lunar(2020, 9, 20);
+// console.log(obj);
 
 console.log(obj.monthCn);
 console.log(obj.dayCn);
