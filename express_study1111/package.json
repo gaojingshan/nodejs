@@ -1,5 +1,5 @@
 {
-  "name": "07_express_study",
+  "name": "06_express_study",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "formidable": "^1.2.2",
+    "mockjs": "^1.1.0"
   }
 }
