@@ -21,9 +21,8 @@ app.get('/students', function (req, res) {
     });
   }
   // 输出JSON
-  res.json(arr)
+  res.json(arr);
 });
-
 
 // 监听3000端口
 app.listen(3000);
