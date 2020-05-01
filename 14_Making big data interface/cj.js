@@ -1,8 +1,8 @@
 var mockjs = require('mockjs');
 var Random = mockjs.Random;
 
+// 连接数据库，https://www.npmjs.com/package/mysql
 var mysql = require('mysql');
-// 连接数据库
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -11,12 +11,17 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
+// 计数器
 var count = 0;
+
+// 封装一个函数
 function insert() {
-  if (count == 10) {
-    console.log('全部插入完毕');
+  // 如果次数够了，就结束，如果不写结束语句就会死循环了
+  if (count == 3000) {
+    console.log('已经全部插入完毕');
     return;
   }
+  // 执行一次insert就计数器加1
   count++;
   console.log('正在插入第' + count + '条');
 
@@ -34,6 +39,8 @@ function insert() {
     results,
     fields
   ) {
+    // 插入完一条数据之后的回调，继续插入新的数据，这样的就是同步的了，
+    // 一条接一条插入，不要用for循环套
     insert();
   });
 }
