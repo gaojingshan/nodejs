@@ -75,13 +75,18 @@ app.get('/students', function (req, res) {
     // 如果用户没有查询参数，就留空
     var chaxun_str = '';
   }
+  // 判断用户有没有输入分页
+  if (page) {
+    var sql =
+      'SELECT * FROM student ' +
+      chaxun_str +
+      ' ORDER BY id ASC LIMIT ' +
+      (page - 1) * 10 +
+      ', 10';
+  } else {
+    var sql = 'SELECT * FROM student ' + chaxun_str + ' ORDER BY id ASC';
+  }
 
-  var sql =
-    'SELECT * FROM student ' +
-    chaxun_str +
-    ' ORDER BY id ASC LIMIT ' +
-    (page - 1) * 10 +
-    ', 10';
   console.log(sql);
 
   // 执行查询

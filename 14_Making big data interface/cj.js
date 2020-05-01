@@ -30,8 +30,29 @@ function insert() {
     age: Random.integer(20, 30),
     sex: Random.pick(['男', '女']),
     blood: Random.pick(['A', 'B', 'O', 'AB', '熊猫']),
-    star: Random.pick(['白羊座', '双鱼座', '处女座', '巨蟹座']),
-    ethnic: Random.pick(['汉族', '满族', '回族', '维吾尔族', '土家族', '苗族']),
+    star: Random.pick([
+      '白羊座',
+      '金牛座',
+      '双子座',
+      '巨蟹座',
+      '狮子座',
+      '处女座',
+      '天秤座',
+      '天蝎座',
+      '射手座',
+      '摩羯座',
+      '水瓶座',
+      '双鱼座',
+    ]),
+    ethnic: Random.pick([
+      '汉族',
+      '苗族',
+      '满族',
+      '土家族',
+      '维吾尔族',
+      '彝族',
+      '壮族',
+    ]),
   };
 
   connection.query('INSERT INTO student SET ?', post, function (
